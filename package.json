@@ -11,7 +11,7 @@
     "analyze": "tsc -b && vite build --mode analyze",
     "dev": "vite",
     "build": "tsc -b && vite build",
-    "grc": "npx generate-react-cli",
+    "grc": "npx generate-react-cli component",
     "lint": "eslint \"{src,apps,libs,test}/**/*.{ts,tsx}\" --fix",
     "preview": "vite preview"
   },
