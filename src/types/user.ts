@@ -5,6 +5,7 @@ export interface GitHubUser {
   name: string | null;
   company: string | null;
   blog: string | null;
+  bio: string;
   location: string | null;
   twitter_username: string | null;
   public_repos: number;

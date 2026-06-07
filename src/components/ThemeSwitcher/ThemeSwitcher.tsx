@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import MoonIcon from "../../assets/icon-moon.svg";
 import SunIcon from "../../assets/icon-sun.svg";
-import styles from './ThemeSwitcher.module.css';
+import styles from "./ThemeSwitcher.module.css";
 
 
 export function ThemeSwitcher() {
@@ -11,8 +11,8 @@ export function ThemeSwitcher() {
   const ThemeIcon = isDark ? MoonIcon : SunIcon;
 
   useEffect(() => {
-    document.body.setAttribute('data-theme', isDark ? 'dark' : 'light')
-  }, [isDark])
+    document.body.setAttribute("data-theme", isDark ? "dark" : "light");
+  }, [isDark]);
 
   return (
     <div 
