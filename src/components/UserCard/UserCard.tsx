@@ -1,4 +1,5 @@
 import { useAppContext } from "../../contexts/App/context";
+import { UserInfo } from "../UserInfo/UserInfo";
 import { UserStat } from "../UserStat/UserStat";
 import { UserTitle } from "../UserTitle/UserTitle";
 import styles from "./UserCard.module.scss";
@@ -23,6 +24,7 @@ export function UserCard() {
         {me.bio || ""}
       </p>
       <UserStat />
+      <UserInfo />
     </div>
   );
 }
