@@ -23,6 +23,10 @@
     letter-spacing: 2.5px;
   }
 
+  svg {
+    fill: var(--switcher-color);
+  }
+
   &:hover {
     span {
       color: var(--switcher-color-hover);

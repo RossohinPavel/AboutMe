@@ -11,7 +11,11 @@ export function UserTitle() {
   return (
     <div className={styles["user-title"]}>
       <h2>{me?.name}</h2>
-      <h3>{me?.login}</h3>
+      <h3>
+        <a href={me?.html_url} target="_blank">
+          @{me?.login}
+        </a>
+      </h3>
       <span>{joindedDate}</span>
     </div>
   );

@@ -2,10 +2,11 @@ import { defineConfig } from 'vite';
 import type { PluginOption } from 'vite';
 import react from '@vitejs/plugin-react';
 import { visualizer } from 'rollup-plugin-visualizer';
+import svgr from "vite-plugin-svgr";
 
 
 const getPlugins = (mode: string) => {
-  const plugins: PluginOption[] = [react()];
+  const plugins: PluginOption[] = [react(), svgr()];
   if ( mode === "analyze" ) {
     plugins.push(visualizer({
       open: true,
