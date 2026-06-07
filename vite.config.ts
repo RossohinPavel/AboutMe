@@ -20,6 +20,7 @@ const getPlugins = (mode: string) => {
 // https://vite.dev/config/
 export default defineConfig(({mode}) => {
   return {
+    base: mode === "build" ? "/AboutMe/": "/",
     plugins: getPlugins(mode),
     build: {
       emptyOutDir: true,
