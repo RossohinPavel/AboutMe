@@ -10,7 +10,7 @@
   }
 }
 
-.theme-switcher  {
+.theme-switcher {
   display: flex;
   align-items: center;
   gap: 1rem;
@@ -18,7 +18,7 @@
 
   span {
     color: var(--switcher-color);
-    font-size: 0.75.rem;
+    font-size: 0.75rem;
     text-transform: uppercase;
     letter-spacing: 2.5px;
   }
@@ -27,12 +27,13 @@
     span {
       color: var(--switcher-color-hover);
     }
+
     svg {
-      fill: var(--switcher-color-hover)
+      fill: var(--switcher-color-hover);
     }
   }
 }
 
 .icon {
-  fill: var(--switcher-color)
+  fill: var(--switcher-color);
 }
