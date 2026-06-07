@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import MoonIcon from "../../assets/icon-moon.svg";
 import SunIcon from "../../assets/icon-sun.svg";
-import styles from "./ThemeSwitcher.module.css";
+import styles from "./ThemeSwitcher.module.scss";
 
 
 export function ThemeSwitcher() {

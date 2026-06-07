@@ -1,5 +1,5 @@
 import { ThemeSwitcher } from "../ThemeSwitcher/ThemeSwitcher";
-import styles from "./Header.module.css";
+import styles from "./Header.module.scss";
 
 
 export function Header() {

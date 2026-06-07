@@ -1,23 +1,18 @@
-import { useAppContext } from '../../contexts/App/context';
-import styles from './UserTitle.module.css';
+import { useAppContext } from "../../contexts/App/context";
+import { dateTimeFormat } from "../../utils/date-time-format";
+import styles from "./UserTitle.module.scss";
 
-
-const localDate = new Intl.DateTimeFormat('en-GB', {
-  day: "numeric",
-  month: "short",
-  year: "numeric"
-})
 
 export function UserTitle() {
   const { me } = useAppContext();
 
-  if ( !me ) {
-    return null;
-  }
+  const joindedDate = dateTimeFormat(me?.created_at || "");
 
   return (
     <div className={styles["user-title"]}>
-      UserTitle Component
+      <h2>{me?.name}</h2>
+      <h3>{me?.login}</h3>
+      <span>{joindedDate}</span>
     </div>
   );
 }
