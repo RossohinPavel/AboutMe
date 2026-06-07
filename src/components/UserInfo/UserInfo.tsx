@@ -1,7 +1,6 @@
-import CompanyIcon from "../../assets/icon-company.svg";
-import LocationIcon from "../../assets/icon-location.svg";
-import TwitterIcon from "../../assets/icon-twitter.svg";
-import WebsiteIcon from "../../assets/icon-website.svg";
+import LocationIcon from "../../assets/icon-location.svg?react";
+import EmailIcon from "../../assets/icon-email.svg?react";
+import WebsiteIcon from "../../assets/icon-website.svg?react";
 import { useAppContext } from "../../contexts/App/context";
 import { InfoItem, type InfoItemProps } from "../InfoItem/InfoItem";
 import styles from "./UserInfo.module.scss";
@@ -11,10 +10,9 @@ export function UserInfo() {
   const { me } = useAppContext();
 
   const items: InfoItemProps[] = [
-    { icon: LocationIcon,text: me?.location },
-    { icon: WebsiteIcon, text: me?.blog, isLink: true },
-    { icon: TwitterIcon, text: me?.twitter_username },
-    { icon: CompanyIcon, text: me?.company },
+    { icon: <LocationIcon />, text: me?.location },
+    { icon: <WebsiteIcon />, text: me?.blog, isLink: true },
+    { icon: <EmailIcon width="20" height="20"/>, text: me?.email },
   ];
 
   return (

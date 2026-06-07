@@ -17,21 +17,21 @@
     font-weight: 700;
     color: var(--utitle-color);
 
-    @media (min-width: 767px) {
+    @media (min-width: 854px) {
       font-size: 1.5rem;
     }
   }
 
   h3 {
-    color: var(--main-color);
     font-size: 0.75rem;
     line-height: 1.5;
 
-    &::before {
-      content: '@';
+    a {
+      color: var(--main-color);
+      text-decoration: none;
     }
 
-    @media (min-width: 767px) {
+    @media (min-width: 854px) {
       font-size: 1rem;
     }
   }
@@ -40,13 +40,13 @@
     color: var(--ujoined-color);
     font-size: 0.75rem;
     line-height: 1.5;
-    margin-top: 6px;
+    // margin-top: 6px;
 
     &::before {
       content: 'Joined ';
     }
 
-    @media (min-width: 767px) {
+    @media (min-width: 854px) {
       font-size: 1rem;
       justify-self: end;
     }

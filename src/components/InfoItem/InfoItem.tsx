@@ -2,7 +2,7 @@ import styles from "./InfoItem.module.scss";
 
 
 export interface InfoItemProps {
-  icon: string;
+  icon: React.ReactNode;
   text?: string | null;
   isLink?: boolean
 }
@@ -19,11 +19,7 @@ export function InfoItem(props: InfoItemProps) {
 
   return (
     <div className={`${styles["info-item"]}${text ? "" : ` ${styles["empty"]}`}`}>
-      <img 
-        src={icon} 
-        alt="Icon" 
-        className={styles["icon"]}
-      />
+      {icon}
       <div>
         {isLink && text ? (
           <a
@@ -32,7 +28,7 @@ export function InfoItem(props: InfoItemProps) {
             rel="noreferrer"
             className={styles["link"]}
           >
-            currentText
+            {currentText}
           </a>
         ) : currentText}
       </div>
