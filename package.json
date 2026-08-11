@@ -1,11 +1,11 @@
 {
-  "name": "react-app-template",
+  "name": "about-me",
   "description": "This is a template for create some react app",
   "private": true,
   "version": "1.0.0",
   "license": "MIT",
   "author": "dfx_17",
-  "packageManager": "pnpm@11.5.2+sha512.71c631e382066efc25625d5cf029075de07b61b37f6e27350fbd84b1bda5864c8c1967adc280776b45c30a715c0359a3be08fef42d5bb09e2b99029979692916",
+  "packageManager": "pnpm@11.21.0+sha512.521705bce689924eac72f5a3587122f362689ef6571e55ba80076fd637c11132ecffada26fad4ea79c485bfddbfd3d5a2a5b05805a77e893de71ec8a6cca3bb1",
   "type": "module",
   "homepage": "https://rossohinpavel.github.io/AboutMe",
   "scripts": {
@@ -14,35 +14,33 @@
     "predeploy": "pnpm build",
     "deploy": "gh-pages -d dist",
     "build": "tsc -b && vite build",
-    "grc": "npx generate-react-cli component",
     "lint": "eslint \"{src,apps,libs,test}/**/*.{ts,tsx}\" --fix",
     "preview": "vite preview"
   },
   "dependencies": {
-    "react": "^19.2.7",
-    "react-dom": "^19.2.7"
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8"
   },
   "devDependencies": {
-    "@eslint/js": "^9.39.4",
+    "@eslint/js": "^9.39.5",
     "@stylistic/eslint-plugin": "^5.10.0",
-    "@types/node": "^25.9.2",
-    "@types/react": "^19.2.17",
-    "@types/react-dom": "^19.2.3",
-    "@vitejs/plugin-react": "^6.0.2",
-    "eslint": "^9.39.4",
+    "@types/node": "^25.9.5",
+    "@types/react": "^19.2.18",
+    "@types/react-dom": "^19.2.4",
+    "@vitejs/plugin-react": "^6.0.5",
+    "eslint": "^9.39.5",
     "eslint-import-resolver-typescript": "^4.4.5",
-    "eslint-plugin-import-x": "^4.16.2",
+    "eslint-plugin-import-x": "^4.17.1",
     "eslint-plugin-react-hooks": "^7.1.1",
-    "eslint-plugin-react-refresh": "^0.5.2",
+    "eslint-plugin-react-refresh": "^0.5.4",
     "eslint-plugin-unused-imports": "^4.4.1",
-    "generate-react-cli": "^11.0.4",
     "gh-pages": "^6.3.0",
-    "globals": "^17.6.0",
+    "globals": "^17.9.0",
     "rollup-plugin-visualizer": "^7.0.1",
-    "sass": "^1.100.0",
+    "sass": "^1.102.0",
     "typescript": "~5.9.3",
-    "typescript-eslint": "^8.60.1",
-    "vite": "^8.0.16",
+    "typescript-eslint": "^8.66.0",
+    "vite": "^8.2.1",
     "vite-plugin-svgr": "^5.2.0"
   }
 }
