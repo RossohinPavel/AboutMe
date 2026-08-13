@@ -3,10 +3,12 @@ import type { PluginOption } from 'vite';
 import react from '@vitejs/plugin-react';
 import { visualizer } from 'rollup-plugin-visualizer';
 import svgr from "vite-plugin-svgr";
+import { seoPlugin } from "./config/vite.seo.plugin.ts";
+import { userSeoConfig} from './config/user.manifest.ts'
 
 
 const getPlugins = (mode: string) => {
-  const plugins: PluginOption[] = [react(), svgr()];
+  const plugins: PluginOption[] = [react(), svgr(), seoPlugin(userSeoConfig)];
   if ( mode === "analyze" ) {
     plugins.push(visualizer({
       open: true,

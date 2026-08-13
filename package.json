@@ -1,10 +1,10 @@
 {
   "name": "about-me",
-  "description": "This is a template for create some react app",
+  "description": "Personal portfolio website featuring my skills, projects, and GitHub activity",
   "private": true,
-  "version": "1.0.0",
+  "version": "1.1.0",
   "license": "MIT",
-  "author": "dfx_17",
+  "author": "Pavel Rossohin",
   "packageManager": "pnpm@11.21.0+sha512.521705bce689924eac72f5a3587122f362689ef6571e55ba80076fd637c11132ecffada26fad4ea79c485bfddbfd3d5a2a5b05805a77e893de71ec8a6cca3bb1",
   "type": "module",
   "homepage": "https://rossohinpavel.github.io/AboutMe",
