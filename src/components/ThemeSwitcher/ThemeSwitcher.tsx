@@ -3,8 +3,6 @@ import MoonIcon from "../../assets/icon-moon.svg?react";
 import SunIcon from "../../assets/icon-sun.svg?react";
 import styles from "./ThemeSwitcher.module.scss";
 
-console.log(MoonIcon)
-
 
 export function ThemeSwitcher() {
   const [isDark, setDark] = useState(false);
