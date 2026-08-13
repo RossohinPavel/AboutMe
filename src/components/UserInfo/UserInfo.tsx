@@ -1,5 +1,5 @@
-import LocationIcon from "../../assets/icon-location.svg?react";
 import EmailIcon from "../../assets/icon-email.svg?react";
+import LocationIcon from "../../assets/icon-location.svg?react";
 import WebsiteIcon from "../../assets/icon-website.svg?react";
 import { useAppContext } from "../../contexts/App/context";
 import { InfoItem, type InfoItemProps } from "../InfoItem/InfoItem";
