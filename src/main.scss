@@ -1,1 +1,141 @@
-@import "normalize.css";
+@use "./styles/global";
+@use "./styles/mixins";
+
+#layout {
+  width: 100%;
+}
+
+main {
+  width: 100%;
+  min-height: 100vh;
+  padding: 28px 24px 44px;
+}
+
+#content {
+  width: min(100%, 840px);
+  margin: 0 auto;
+}
+
+#header:not(:empty) {
+  @include mixins.split-row;
+
+  margin-bottom: 24px;
+}
+
+#profile {
+  @include mixins.card;
+
+  display: grid;
+  grid-template-columns: 112px minmax(0, 1fr);
+  gap: 20px 32px;
+
+  .avatar {
+    grid-row: 1 / span 3;
+    width: 112px;
+    aspect-ratio: 1;
+    object-fit: cover;
+    background: var(--inset);
+    border-radius: 50%;
+  }
+
+  .profile-heading {
+    @include mixins.split-row(flex-start);
+  }
+
+  .name {
+    color: var(--title);
+    font-size: 1.4rem;
+    font-weight: 500;
+  }
+
+  .role {
+    margin-top: 4px;
+    color: var(--accent);
+    font-size: 0.9rem;
+  }
+
+  .joined,
+  .description {
+    color: var(--muted);
+    font-size: 0.82rem;
+  }
+
+  .joined {
+    flex: 0 0 auto;
+  }
+
+  .description {
+    line-height: 1.65;
+  }
+
+  .links {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px 24px;
+  }
+
+  .link {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    min-width: 0;
+    font-size: 0.78rem;
+
+    i,
+    svg {
+      flex: 0 0 auto;
+      width: 20px;
+      height: 20px;
+    }
+
+    a {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+  }
+}
+
+#github:not(:empty) {
+  @include mixins.card;
+
+  margin-top: 24px;
+}
+
+@include mixins.mobile {
+  main {
+    padding: 22px 14px 32px;
+  }
+
+  #profile {
+    grid-template-columns: 72px minmax(0, 1fr);
+    gap: 18px;
+
+    .avatar {
+      grid-row: auto;
+      width: 72px;
+    }
+
+    .profile-heading {
+      display: block;
+    }
+
+    .name {
+      font-size: 1rem;
+    }
+
+    .joined {
+      display: block;
+      margin-top: 6px;
+    }
+
+    .description,
+    .links {
+      grid-column: 1 / -1;
+    }
+
+    .links {
+      grid-template-columns: 1fr;
+    }
+  }
+}

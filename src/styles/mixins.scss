@@ -1,0 +1,23 @@
+@mixin mobile {
+  @media (max-width: 620px) {
+    @content;
+  }
+}
+
+@mixin card {
+  padding: 28px;
+  background: var(--surface);
+  border-radius: 15px;
+  box-shadow: var(--shadow);
+
+  @include mobile {
+    padding: 20px;
+  }
+}
+
+@mixin split-row($align-items: center) {
+  display: flex;
+  align-items: $align-items;
+  justify-content: space-between;
+  gap: 16px;
+}
