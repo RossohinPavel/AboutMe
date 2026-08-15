@@ -36,6 +36,7 @@ main {
     object-fit: cover;
     background: var(--inset);
     border-radius: 50%;
+    box-shadow: var(--avatar-shadow);
   }
 
   .profile-title {
