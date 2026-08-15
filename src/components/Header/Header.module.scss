@@ -1,0 +1,41 @@
+@use "../../styles/mixins";
+
+.header {
+  @include mixins.split-row;
+
+  width: 100%;
+  justify-content: flex-end;
+}
+
+.theme-button {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0;
+  color: var(--header-color);
+  background: none;
+  border: 0;
+  cursor: pointer;
+
+  span {
+    font-size: 0.75rem;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+  }
+
+  svg {
+    width: 20px;
+    height: 20px;
+    fill: currentColor;
+  }
+
+  &:hover {
+    color: var(--header-color-hover);
+  }
+
+  &:focus-visible {
+    color: var(--header-color-hover);
+    outline: 2px solid var(--accent);
+    outline-offset: 6px;
+  }
+}

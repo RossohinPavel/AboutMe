@@ -13,6 +13,8 @@ body[data-theme="light"] {
   --title: #2b3442;
   --text: #4b6a9b;
   --muted: #697c9a;
+  --header-color: #8290a8;
+  --header-color-hover: #2b3442;
   --border: rgba(75, 106, 155, 0.14);
   --shadow: 0 16px 30px -10px rgba(70, 96, 187, 0.2);
 }
@@ -26,6 +28,8 @@ body[data-theme="dark"] {
   --title: #fff;
   --text: #fff;
   --muted: #c7d2e5;
+  --header-color: #9aa7bd;
+  --header-color-hover: #fff;
   --border: rgba(255, 255, 255, 0.1);
   --shadow: none;
 }

@@ -19,7 +19,7 @@ main {
 #header:not(:empty) {
   @include mixins.split-row;
 
-  margin-bottom: 24px;
+  margin-bottom: 12px;
 }
 
 #profile {

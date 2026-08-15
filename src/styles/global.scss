@@ -22,6 +22,10 @@ body {
   background: var(--page);
 }
 
+button {
+  font: inherit;
+}
+
 a {
   color: var(--accent);
   font-family: inherit;
