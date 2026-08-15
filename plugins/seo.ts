@@ -1,5 +1,6 @@
 import type { HtmlTagDescriptor, Plugin } from "vite";
 
+
 export interface SeoConfig {
   lang: string;
   title: string;
@@ -8,18 +9,19 @@ export interface SeoConfig {
   image: string;
 }
 
-export function seoPlugin(seo: SeoConfig): Plugin {
+/** Creates a Vite plugin that adds page metadata for search engines and link previews. */
+export const seo = (config: SeoConfig): Plugin => {
   const tags: HtmlTagDescriptor[] = [
     {
       tag: "title",
-      children: seo.title,
+      children: config.title,
       injectTo: "head",
     },
     {
       tag: "meta",
       attrs: {
         name: "description",
-        content: seo.description,
+        content: config.description,
       },
       injectTo: "head",
     },
@@ -27,12 +29,12 @@ export function seoPlugin(seo: SeoConfig): Plugin {
       tag: "link",
       attrs: {
         rel: "canonical",
-        href: seo.canonical,
+        href: config.canonical,
       },
       injectTo: "head",
     },
 
-    // Open Graph
+    // Adds metadata for Open Graph link previews.
     {
       tag: "meta",
       attrs: {
@@ -45,7 +47,7 @@ export function seoPlugin(seo: SeoConfig): Plugin {
       tag: "meta",
       attrs: {
         property: "og:title",
-        content: seo.title,
+        content: config.title,
       },
       injectTo: "head",
     },
@@ -53,7 +55,7 @@ export function seoPlugin(seo: SeoConfig): Plugin {
       tag: "meta",
       attrs: {
         property: "og:description",
-        content: seo.description,
+        content: config.description,
       },
       injectTo: "head",
     },
@@ -61,7 +63,7 @@ export function seoPlugin(seo: SeoConfig): Plugin {
       tag: "meta",
       attrs: {
         property: "og:url",
-        content: seo.canonical,
+        content: config.canonical,
       },
       injectTo: "head",
     },
@@ -69,12 +71,12 @@ export function seoPlugin(seo: SeoConfig): Plugin {
       tag: "meta",
       attrs: {
         property: "og:image",
-        content: seo.image,
+        content: config.image,
       },
       injectTo: "head",
     },
 
-    // Twitter/X
+    // Adds metadata for X link previews.
     {
       tag: "meta",
       attrs: {
@@ -87,7 +89,7 @@ export function seoPlugin(seo: SeoConfig): Plugin {
       tag: "meta",
       attrs: {
         name: "twitter:title",
-        content: seo.title,
+        content: config.title,
       },
       injectTo: "head",
     },
@@ -95,7 +97,7 @@ export function seoPlugin(seo: SeoConfig): Plugin {
       tag: "meta",
       attrs: {
         name: "twitter:description",
-        content: seo.description,
+        content: config.description,
       },
       injectTo: "head",
     },
@@ -103,7 +105,7 @@ export function seoPlugin(seo: SeoConfig): Plugin {
       tag: "meta",
       attrs: {
         name: "twitter:image",
-        content: seo.image,
+        content: config.image,
       },
       injectTo: "head",
     },
@@ -112,10 +114,10 @@ export function seoPlugin(seo: SeoConfig): Plugin {
   return {
     name: "about-me:seo",
 
-    transformIndexHtml(html) {
+    transformIndexHtml: (html) => {
       const transformedHtml = html.replace(
         /<html\s+lang=(["']).*?\1/i,
-        `<html lang="${seo.lang}"`,
+        `<html lang="${config.lang}"`,
       );
 
       return {
@@ -124,4 +126,4 @@ export function seoPlugin(seo: SeoConfig): Plugin {
       };
     },
   };
-}
+};

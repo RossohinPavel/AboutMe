@@ -6,7 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   </head>
   <body>
-    <div id="root"></div>
+    <div id="layout">
+      <main>
+        <div id="content">
+          <header id="header"></header>
+          <section id="profile"><static-profile></static-profile></section>
+          <section id="github"></section>
+        </div>
+      </main>
+    </div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

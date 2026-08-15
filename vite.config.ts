@@ -3,12 +3,20 @@ import type { PluginOption } from 'vite';
 import react from '@vitejs/plugin-react';
 import { visualizer } from 'rollup-plugin-visualizer';
 import svgr from "vite-plugin-svgr";
-import { seoPlugin } from "./config/vite.seo.plugin.ts";
-import { userSeoConfig} from './config/user.manifest.ts'
+import { seo } from "./plugins/seo.ts";
+import { staticProfile } from "./plugins/static-profile.ts";
+import { userSeo, userStatic } from './src/user/helpers.ts';
+import { userManifest } from './src/user/manifest.ts';
 
+const getBase = (command: string) => {
+  const pathName = new URL(userManifest.github.appPage).pathname;
+  return command === "build" ? pathName : "/";
+}
 
-const getPlugins = (mode: string) => {
-  const plugins: PluginOption[] = [react(), svgr(), seoPlugin(userSeoConfig)];
+// https://vite.dev/config/
+export default defineConfig(({mode, command}) => {
+  const base = getBase(command);
+  const plugins: PluginOption[] = [react(), svgr(), seo(userSeo()), staticProfile(userStatic(base))];
   if ( mode === "analyze" ) {
     plugins.push(visualizer({
       open: true,
@@ -16,14 +24,9 @@ const getPlugins = (mode: string) => {
       gzipSize: true
     }));
   }
-  return plugins;
-}
-
-// https://vite.dev/config/
-export default defineConfig(({mode, command}) => {
   return {
-    base: command === "build" ? "/AboutMe/": "/",
-    plugins: getPlugins(mode),
+    base,
+    plugins,
     build: {
       emptyOutDir: true,
       rollupOptions: {

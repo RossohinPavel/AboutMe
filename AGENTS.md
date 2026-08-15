@@ -12,11 +12,10 @@ Before starting any task, identify the applicable rules from their stated condit
 ## JAVASCRIPT
 
 - `.ai/rules/javascript/no-new-blank-lines-inside-blocks.md` Apply when writing or modifying JavaScript or TypeScript code
-- `.ai/rules/javascript/prefer-function-declarations.md` Apply when writing or modifying JavaScript or TypeScript functions
 
 ## REACT
 
-- `.ai/rules/react/function-component-conventions.md` Load when creating or modifying React code
+- `.ai/rules/react/function-component-conventions.md` Load when working on any task in a React application project
 
 ## TYPESCRIPT
 
