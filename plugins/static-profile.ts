@@ -31,11 +31,11 @@ export const staticProfile = (config: StaticProfileConfig): Plugin => {
   const card = `
             <img class="avatar" src="${config.avatar.url}" alt="${config.avatar.alt}">
             <div class="profile-heading">
-              <div>
+              <div class="profile-title">
                 <h1 class="name">${config.name}</h1>
-                <p class="role">${config.role}</p>
+                <span class="joined">${config.location}</span>
               </div>
-              <span class="joined">${config.location}</span>
+              <p class="role">${config.role}</p>
             </div>
             <p class="description">${config.description}</p>
             <div class="links">${links}

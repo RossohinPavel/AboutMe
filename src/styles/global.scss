@@ -19,16 +19,31 @@ body {
   min-width: 320px;
   min-height: 100vh;
   color: var(--text);
-  background: var(--page);
+  background-color: var(--page);
+  transition:
+    color 240ms ease,
+    background-color 320ms ease;
+}
+
+button {
+  font: inherit;
 }
 
 a {
   color: var(--accent);
   font-family: inherit;
   text-decoration: none;
+  transition: color 180ms ease;
 
   &:hover {
     color: var(--accent-hover);
     text-decoration: underline;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body,
+  a {
+    transition: none;
   }
 }

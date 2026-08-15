@@ -1,0 +1,59 @@
+@use "../../styles/mixins";
+
+.header {
+  @include mixins.split-row;
+
+  width: 100%;
+  justify-content: flex-end;
+}
+
+.theme-button {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  min-width: 112px;
+  padding: 9px 12px 9px 15px;
+  color: var(--muted);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  box-shadow: var(--shadow);
+  cursor: pointer;
+  transition:
+    color 180ms ease,
+    background-color 180ms ease,
+    border-color 180ms ease,
+    transform 180ms ease;
+
+  span {
+    font-size: 0.75rem;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+  }
+
+  svg {
+    width: 20px;
+    height: 20px;
+    margin-left: auto;
+    fill: currentColor;
+  }
+
+  &:hover {
+    color: var(--title);
+    background: var(--control-hover);
+    border-color: var(--accent-border);
+    transform: translateY(-1px);
+  }
+
+  &:focus-visible {
+    color: var(--title);
+    outline: 2px solid var(--accent);
+    outline-offset: 6px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .theme-button {
+    transition: none;
+  }
+}

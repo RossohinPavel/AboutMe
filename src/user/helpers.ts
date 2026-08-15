@@ -21,16 +21,6 @@ export const userStatic = (base: string): StaticProfileConfig => ({
   description: userManifest.description,
   links: [
     {
-      icon: "github",
-      label: "GitHub",
-      url: userManifest.github.main,
-    },
-    {
-      icon: "file-text",
-      label: "Резюме",
-      url: userManifest.resume,
-    },
-    {
       icon: "mail",
       label: userManifest.contacts.email,
       url: `mailto:${userManifest.contacts.email}`,
@@ -39,6 +29,11 @@ export const userStatic = (base: string): StaticProfileConfig => ({
       icon: "send",
       label: "Telegram",
       url: userManifest.contacts.telegram,
+    },
+    {
+      icon: "file-text",
+      label: "Резюме",
+      url: userManifest.resume,
     },
   ],
 });
