@@ -5,7 +5,7 @@ import { visualizer } from 'rollup-plugin-visualizer';
 import svgr from "vite-plugin-svgr";
 import { seo } from "./plugins/seo.ts";
 import { staticProfile } from "./plugins/static-profile.ts";
-import { userSeo, userStatic } from './src/user/helpers.ts';
+import { createSeoConfig, createStaticProfileConfig } from './src/user/helpers.ts';
 import { userManifest } from './src/user/manifest.ts';
 
 const getBase = (command: string) => {
@@ -16,7 +16,12 @@ const getBase = (command: string) => {
 // https://vite.dev/config/
 export default defineConfig(({mode, command}) => {
   const base = getBase(command);
-  const plugins: PluginOption[] = [react(), svgr(), seo(userSeo()), staticProfile(userStatic(base))];
+  const plugins: PluginOption[] = [
+    react(),
+    svgr(),
+    seo(createSeoConfig()),
+    staticProfile(createStaticProfileConfig(base)),
+  ];
   if ( mode === "analyze" ) {
     plugins.push(visualizer({
       open: true,

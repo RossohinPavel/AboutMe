@@ -56,7 +56,7 @@ export default defineConfig([
         "newlines-between": "never",
       }],
       "import/export": "error",
-      "import/newline-after-import": ["error", { count: 2, exactCount: true }],
+      "import/newline-after-import": ["error", { count: 2, exactCount: true, considerComments: true }],
       "unused-imports/no-unused-imports": "error",
       "unused-imports/no-unused-vars": ["warn", { 
         vars: "all", varsIgnorePattern: "^_", args: "after-used", argsIgnorePattern: "^_" 
