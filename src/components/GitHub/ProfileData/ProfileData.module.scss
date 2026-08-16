@@ -1,0 +1,42 @@
+@use "../../../styles/mixins";
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  overflow: hidden;
+  margin-bottom: 24px;
+  background: var(--border);
+  border-radius: 10px;
+}
+
+.stat {
+  padding: 15px 18px;
+  background: var(--inset);
+
+  dt {
+    margin-bottom: 6px;
+    color: var(--muted);
+    font-size: 0.7rem;
+  }
+
+  dd {
+    color: var(--title);
+    font-size: 1.15rem;
+    font-weight: 500;
+  }
+}
+
+@include mixins.mobile {
+  .stats {
+    grid-template-columns: 1fr;
+  }
+
+  .stat {
+    @include mixins.split-row;
+
+    dt {
+      margin: 0;
+    }
+  }
+}

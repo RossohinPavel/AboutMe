@@ -1,0 +1,42 @@
+@use "../../../styles/mixins";
+
+.header {
+  @include mixins.split-row;
+
+  margin-bottom: 20px;
+
+  h2 {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--title);
+    font-size: 1.2rem;
+    font-weight: 500;
+  }
+
+  a {
+    font-size: 0.78rem;
+  }
+}
+
+.loader {
+  width: 18px;
+  height: 18px;
+}
+
+.loaderActive {
+  composes: loader;
+  visibility: visible;
+  animation: spin 1s linear infinite;
+}
+
+.loaderInactive {
+  composes: loader;
+  visibility: hidden;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
