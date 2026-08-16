@@ -1,5 +1,6 @@
 @use "normalize.css";
 @use "./theme";
+@use "./mixins";
 
 * {
   box-sizing: border-box;
@@ -7,6 +8,8 @@
 }
 
 :root {
+  --spacing-small: 12px;
+
   font-family: "Space Mono", ui-monospace, monospace;
   font-weight: 400;
   font-synthesis: none;
@@ -41,7 +44,7 @@ a {
   }
 }
 
-@media (prefers-reduced-motion: reduce) {
+@include mixins.reduced-motion {
   body,
   a {
     transition: none;

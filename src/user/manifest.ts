@@ -9,7 +9,7 @@ export const userManifest = {
   github: {
     main: "https://github.com/RossohinPavel/",
     appPage: "https://rossohinpavel.github.io/AboutMe/",
-    favorites: ['stepik-auto', 'AboutMe', ' NestAppTemplate', 'MonorepoTemplateV2']
+    favorites: ["stepik-auto", "AboutMe", " NestAppTemplate", "MonorepoTemplateV2"],
   },
   contacts: {
     email: "rossohinpavel@yandex.ru",

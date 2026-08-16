@@ -19,7 +19,7 @@ main {
 #header:not(:empty) {
   @include mixins.split-row;
 
-  margin-bottom: 12px;
+  margin-bottom: var(--spacing-small);
 }
 
 #profile {
@@ -76,7 +76,7 @@ main {
     grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
     grid-template-rows: repeat(2, auto);
     grid-auto-flow: column;
-    gap: 12px 40px;
+    gap: var(--spacing-small) 40px;
   }
 
   .link {
@@ -109,7 +109,7 @@ main {
 #github:not(:empty) {
   @include mixins.card;
 
-  margin-top: 24px;
+  margin-top: var(--spacing-small);
 }
 
 @include mixins.mobile {

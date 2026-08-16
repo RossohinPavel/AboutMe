@@ -1,50 +1,7 @@
-@use "../../styles/mixins";
-
-.header {
-  @include mixins.split-row;
-
-  margin-bottom: 20px;
-
-  h2 {
-    color: var(--title);
-    font-size: 1.1rem;
-    font-weight: 500;
-  }
-
-  a {
-    font-size: 0.78rem;
-  }
-}
-
-.stats {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1px;
-  overflow: hidden;
-  margin-bottom: 24px;
-  background: var(--border);
-  border-radius: 10px;
-}
-
-.stat {
-  padding: 15px 18px;
-  background: var(--inset);
-
-  dt {
-    margin-bottom: 6px;
-    color: var(--muted);
-    font-size: 0.7rem;
-  }
-
-  dd {
-    color: var(--title);
-    font-size: 1.15rem;
-    font-weight: 500;
-  }
-}
+@use "../../../styles/mixins";
 
 .projects-title {
-  margin-bottom: 12px;
+  margin-bottom: var(--spacing-small);
   color: var(--title);
   font-size: 0.82rem;
   font-weight: 500;
@@ -53,7 +10,7 @@
 .projects {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 12px;
+  gap: var(--spacing-small);
 }
 
 .project {
@@ -101,18 +58,6 @@
 }
 
 @include mixins.mobile {
-  .stats {
-    grid-template-columns: 1fr;
-  }
-
-  .stat {
-    @include mixins.split-row;
-
-    dt {
-      margin: 0;
-    }
-  }
-
   .projects {
     grid-template-columns: 1fr;
   }
