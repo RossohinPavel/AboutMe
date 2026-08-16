@@ -15,6 +15,7 @@ Before starting any task, identify the applicable rules from their stated condit
 
 ## REACT
 
+- `.ai/rules/react/component-props.md` Load when writing, modifying, or reviewing React function components that receive props
 - `.ai/rules/react/function-component-conventions.md` Load when working on any task in a React application project
 
 ## TYPESCRIPT
