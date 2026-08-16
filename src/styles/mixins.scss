@@ -4,6 +4,12 @@
   }
 }
 
+@mixin reduced-motion {
+  @media (prefers-reduced-motion: reduce) {
+    @content;
+  }
+}
+
 @mixin card {
   padding: 28px;
   background: var(--surface);
