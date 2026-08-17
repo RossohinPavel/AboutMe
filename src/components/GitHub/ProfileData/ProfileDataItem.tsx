@@ -1,13 +1,13 @@
 import styles from "./ProfileData.module.scss";
 
 
-type ProfileDataItemProps = {
+interface ProfileDataItemProps {
   name: string;
-  value: string | number;
-};
+  value?: string | number;
+}
 
 export function ProfileDataItem(props: ProfileDataItemProps) {
-  const { name, value } = props;
+  const { name, value = "—" } = props;
   return (
     <div className={styles.stat}>
       <dt>{name}</dt>

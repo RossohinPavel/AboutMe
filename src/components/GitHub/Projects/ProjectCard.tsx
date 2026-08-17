@@ -1,13 +1,13 @@
 import styles from "./Projects.module.scss";
 
 
-type ProjectCardProps = {
+interface ProjectCardProps {
   description: string;
   forks: string | number;
   language: string;
   name: string;
   stars: string | number;
-};
+}
 
 export function ProjectCard(props: ProjectCardProps) {
   const { description, forks, language, name, stars } = props;
