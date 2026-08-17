@@ -1,7 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import { number, object, parse, string } from "valibot";
 import { buildGitHubProfileApiUrl } from "../../../user/helpers";
-import { fetchJson, formatDate } from "../../../utils";
+import { createJsonQueryFn, formatDate } from "../../../utils";
 import { ProfileDataItem } from "./ProfileDataItem";
 import styles from "./ProfileData.module.scss";
 
@@ -12,11 +12,13 @@ const githubProfileSchema = object({
   public_repos: number(),
 });
 
+const validateGithubProfile = (v: unknown) => parse(githubProfileSchema, v);
+
 export function ProfileData() {
   const { data } = useQuery({
     queryKey: ["github-profile"],
-    queryFn: () => fetchJson(buildGitHubProfileApiUrl()),
-    select: (v: unknown) => parse(githubProfileSchema, v),
+    queryFn: createJsonQueryFn(buildGitHubProfileApiUrl(), validateGithubProfile),
+    select: validateGithubProfile,
   });
   return (
     <dl className={styles.stats}>
