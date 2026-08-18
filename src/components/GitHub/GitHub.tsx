@@ -29,7 +29,7 @@ export function GitHub() {
       client={queryClient}
       persistOptions={{ persister: localStoragePersister }}
     >
-      <div aria-label="Статистика и избранные проекты GitHub">
+      <div>
         <Header />
         <ProfileData />
         <Projects />

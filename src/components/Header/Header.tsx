@@ -26,8 +26,7 @@ export function Header() {
   return (
     <div className={styles.header}>
       <button
-        aria-label={`switch to ${nextTheme} theme`}
-        aria-pressed={isDark}
+        aria-label={`Переключить на тему ${nextTheme}`}
         className={styles["theme-button"]}
         onClick={handleThemeClick}
         type="button"
