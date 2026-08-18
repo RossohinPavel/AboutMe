@@ -5,6 +5,7 @@ import { visualizer } from 'rollup-plugin-visualizer';
 import svgr from "vite-plugin-svgr";
 import { seo } from "./plugins/seo.ts";
 import { staticProfile } from "./plugins/static-profile.ts";
+import { theme } from "./plugins/theme.ts";
 import { createSeoConfig, createStaticProfileConfig } from './src/user/helpers.ts';
 import { userManifest } from './src/user/manifest.ts';
 
@@ -21,6 +22,7 @@ export default defineConfig(({mode, command}) => {
     svgr(),
     seo(createSeoConfig()),
     staticProfile(createStaticProfileConfig(base)),
+    theme("color-theme"),
   ];
   if ( mode === "analyze" ) {
     plugins.push(visualizer({
