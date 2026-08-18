@@ -9,13 +9,13 @@ const themeStorageKey = "color-theme";
 
 export function Header() {
   const [isDark, setIsDark] = useState(
-    () => localStorage.getItem(themeStorageKey) === themes[1],
+    () => document.documentElement.dataset.theme === themes[1],
   );
   const theme = themes[Number(isDark)];
   const nextTheme = themes[Number(!isDark)];
 
   useEffect(() => {
-    document.body.dataset.theme = theme;
+    document.documentElement.dataset.theme = theme;
     localStorage.setItem(themeStorageKey, theme);
   }, [theme]);
 

@@ -1,5 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
-import { array, nullable, number, object, parse, string } from "valibot";
+import { array, nullable, number, object, parse, string, type InferOutput } from "valibot";
 import { buildGitHubReposApiUrl } from "../../../user/helpers";
 import { userManifest } from "../../../user/manifest";
 import { createJsonQueryFn } from "../../../utils";
@@ -17,7 +17,20 @@ const githubRepositorySchema = object({
 
 const githubRepositoriesSchema = array(githubRepositorySchema);
 
+const githubRepositoryStub: InferOutput<typeof githubRepositorySchema> = {
+  description: null,
+  forks_count: 0,
+  language: null,
+  name: "",
+  stargazers_count: 0,
+};
+
 const favoriteRepositoryNames = new Set<string>(userManifest.github.favorites);
+
+const initialGithubRepositories = userManifest.github.favorites.map((name) => ({
+  ...githubRepositoryStub,
+  name,
+}));
 
 const validateGithubRepositories = (v: unknown) => {
   return parse(githubRepositoriesSchema, v)
@@ -28,6 +41,7 @@ export function Projects() {
   const { data } = useQuery({
     queryKey: ["github-repositories"],
     queryFn: createJsonQueryFn(buildGitHubReposApiUrl(), validateGithubRepositories),
+    placeholderData: initialGithubRepositories,
     select: validateGithubRepositories,
   });
   return (
@@ -39,6 +53,7 @@ export function Projects() {
         {data?.map((repository) => (
           <ProjectCard
             name={repository.name}
+            url={`${userManifest.github.main}${repository.name}`}
             description={repository.description}
             language={repository.language}
             stars={repository.stargazers_count}
