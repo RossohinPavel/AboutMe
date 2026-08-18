@@ -4,14 +4,20 @@ import SunIcon from "../../assets/icon-sun.svg?react";
 import styles from "./Header.module.scss";
 
 
+const themes = ["light", "dark"] as const;
+const themeStorageKey = "color-theme";
+
 export function Header() {
-  const [isDark, setIsDark] = useState(false);
-  const themeText = isDark ? "Dark" : "Light";
-  const nextThemeText = isDark ? "light" : "dark";
+  const [isDark, setIsDark] = useState(
+    () => localStorage.getItem(themeStorageKey) === themes[1],
+  );
+  const theme = themes[Number(isDark)];
+  const nextTheme = themes[Number(!isDark)];
 
   useEffect(() => {
-    document.body.dataset.theme = isDark ? "dark" : "light";
-  }, [isDark]);
+    document.body.dataset.theme = theme;
+    localStorage.setItem(themeStorageKey, theme);
+  }, [theme]);
 
   const handleThemeClick = () => {
     setIsDark((currentIsDark) => !currentIsDark);
@@ -20,13 +26,13 @@ export function Header() {
   return (
     <div className={styles.header}>
       <button
-        aria-label={`Switch to ${nextThemeText} theme`}
+        aria-label={`switch to ${nextTheme} theme`}
         aria-pressed={isDark}
         className={styles["theme-button"]}
         onClick={handleThemeClick}
         type="button"
       >
-        <span>{themeText}</span>
+        <span>{theme}</span>
         {isDark ? <MoonIcon aria-hidden="true" /> : <SunIcon aria-hidden="true" />}
       </button>
     </div>

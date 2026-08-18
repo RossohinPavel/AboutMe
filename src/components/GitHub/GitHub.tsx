@@ -8,7 +8,7 @@ import { Projects } from "./Projects/Projects";
 
 const localStoragePersister = createAsyncStoragePersister({
   storage: window.localStorage,
-  key: "APP_CACHE",
+  key: "query-cache",
 });
 
 const queryClient = new QueryClient({
