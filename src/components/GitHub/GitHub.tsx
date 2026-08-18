@@ -5,6 +5,7 @@ import { Header } from "./Header/Header";
 import { ProfileData } from "./ProfileData/ProfileData";
 import { Projects } from "./Projects/Projects";
 
+
 const localStoragePersister = createAsyncStoragePersister({
   storage: window.localStorage,
   key: "APP_CACHE",
