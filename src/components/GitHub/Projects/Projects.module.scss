@@ -26,6 +26,10 @@
   color: var(--accent);
   font-size: 0.84rem;
   font-weight: 500;
+
+  a {
+    color: inherit;
+  }
 }
 
 .project-description {

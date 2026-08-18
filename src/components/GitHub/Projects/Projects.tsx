@@ -53,6 +53,7 @@ export function Projects() {
         {data?.map((repository) => (
           <ProjectCard
             name={repository.name}
+            url={`${userManifest.github.main}${repository.name}`}
             description={repository.description}
             language={repository.language}
             stars={repository.stargazers_count}
