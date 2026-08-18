@@ -31,7 +31,7 @@ export const createSeoConfig = (): SeoConfig => ({
 export const createStaticProfileConfig = (base: string): StaticProfileConfig => ({
   avatar: {
     url: base + userManifest.image,
-    alt: userManifest.name,
+    alt: "Фото профиля",
   },
   name: userManifest.name,
   role: userManifest.summary,

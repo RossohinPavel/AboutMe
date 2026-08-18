@@ -5,9 +5,10 @@ import { Header } from "./Header/Header";
 import { ProfileData } from "./ProfileData/ProfileData";
 import { Projects } from "./Projects/Projects";
 
+
 const localStoragePersister = createAsyncStoragePersister({
   storage: window.localStorage,
-  key: "APP_CACHE",
+  key: "query-cache",
 });
 
 const queryClient = new QueryClient({
@@ -28,7 +29,7 @@ export function GitHub() {
       client={queryClient}
       persistOptions={{ persister: localStoragePersister }}
     >
-      <div aria-label="Статистика и избранные проекты GitHub">
+      <div>
         <Header />
         <ProfileData />
         <Projects />

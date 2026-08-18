@@ -1,5 +1,4 @@
 import { useIsFetching } from "@tanstack/react-query";
-
 import LoaderIcon from "../../../assets/loader.svg?react";
 import { extractGitHubUsername } from "../../../user/helpers";
 import { userManifest } from "../../../user/manifest";

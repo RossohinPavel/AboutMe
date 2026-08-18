@@ -2,8 +2,8 @@ import { useQuery } from "@tanstack/react-query";
 import { number, object, parse, string } from "valibot";
 import { buildGitHubProfileApiUrl } from "../../../user/helpers";
 import { createJsonQueryFn, formatDate } from "../../../utils";
-import { ProfileDataItem } from "./ProfileDataItem";
 import styles from "./ProfileData.module.scss";
+import { ProfileDataItem } from "./ProfileDataItem";
 
 
 const githubProfileSchema = object({
